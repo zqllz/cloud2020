@@ -19,19 +19,19 @@ import javax.annotation.Resource;
 @Slf4j
 public class OrderController {
 
-    private static final String PAYMENT_URL = "http://localhost:8001";
+    //private static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
+    public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
 
     @Resource
     private RestTemplate restTemplate;
 
     @GetMapping("/consumer/payment/create")
-    public CommonResult<Payment> ctrate(Payment payment){
-        CommonResult commonResult = restTemplate.postForObject(PAYMENT_URL + "/payment/create", payment, CommonResult.class);
-        return commonResult;
+    public CommonResult<Payment> create(Payment payment){
+        return restTemplate.postForObject(PAYMENT_URL+"/payment/create",payment,CommonResult.class);
     }
 
     @GetMapping("/consumer/payment/get/{id}")
-    public CommonResult<Payment> getPayment(@PathVariable("id") Long id) {
-        return restTemplate.getForObject(PAYMENT_URL + "/payment/get/" + id, CommonResult.class);
+    public CommonResult<Payment> getPayment(@PathVariable("id") Long id){
+        return restTemplate.getForObject(PAYMENT_URL+"/payment/get/"+id,CommonResult.class);
     }
 }

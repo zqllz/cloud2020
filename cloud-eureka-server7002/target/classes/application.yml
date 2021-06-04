@@ -8,4 +8,4 @@ eureka:
     fetch-registry: false  #不注册自己
     register-with-eureka: false # 不检索自己
     service-url:
-      defaultZone: http://www.eureka7001.com:7001/
+      defaultZone: http://localhost:7001/eureka/
