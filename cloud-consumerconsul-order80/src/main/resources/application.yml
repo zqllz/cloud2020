@@ -1,0 +1,14 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: consul-consumer-payment
+
+  cloud:
+    consul:
+      host: 123.57.25.100
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        register-health-check: false
