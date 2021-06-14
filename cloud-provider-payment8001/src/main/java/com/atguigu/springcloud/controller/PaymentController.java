@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author yuluyang
@@ -53,6 +54,16 @@ public class PaymentController {
 
     @RequestMapping("/payment/lb")
     public String getPaymentLb(){
+        return serverPort;
+    }
+
+    @GetMapping("/payment/feign/timeout")
+    public String PaymentFeignTimeout(){
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return serverPort;
     }
 }
