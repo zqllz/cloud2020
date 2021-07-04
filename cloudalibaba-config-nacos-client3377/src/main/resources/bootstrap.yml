@@ -12,6 +12,9 @@ spring:
       config:
         server-addr: 123.57.25.100:8848 # nacos作为配置管理中心
         file-extension: yaml #制定为yaml格式的文件
+        group: DEV_GROUP
+        namespace: 75986cfd-40c2-4052-8b14-fc62325685b9
+
 
 # ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
 # nacos-config-client-dev.yaml
