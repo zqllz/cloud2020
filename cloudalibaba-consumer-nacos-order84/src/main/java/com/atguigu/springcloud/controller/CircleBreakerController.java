@@ -54,7 +54,6 @@ public class CircleBreakerController {
     }
 
     // --------------- open feign---------
-
     @Resource
     private PaymentService paymentService;
 
