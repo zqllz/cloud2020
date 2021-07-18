@@ -1,0 +1,17 @@
+server:
+  port: 84
+
+spring:
+  application:
+    name: nacos-order-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 123.57.25.100:8848
+    sentinel:
+      transport:
+        port:
+        dashboard: localhost:8080
+
+service-url:
+  nacos-user-service: http:nacos-payment-provider
